@@ -55,11 +55,17 @@ The primary goal of this project is to leverage MATLAB's powerful matrix manipul
 ## Demonstration
 
 <p align="center">
-  <!-- Insert your simulation GIF or image here -->
-  <!-- Example: <img src="assets/solar_system.gif" width="600" alt="Solar System Simulation"> -->
+
+<img width="436" alt="Screenshot 2025-07-04 at 9 33 20 am" src="https://github.com/user-attachments/assets/8cf45504-f947-41d0-8612-aab64ea6bc57" />
+  
 </p>
 
 The image above shows a stable solar-system-like configuration simulated with the Velocity Verlet integrator.
+
+
+<img width="538" alt="Screenshot 2025-07-04 at 9 32 43 am" src="https://github.com/user-attachments/assets/823bf6b2-d8f4-4751-b368-89a73c13f228" />
+
+The image above shows a chaotic three-body configuration simulated with the 4th order Runge–Kutta (RK4) method
 
 ---
 
