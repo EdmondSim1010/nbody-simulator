@@ -6,7 +6,7 @@
   <img src="https://img.shields.io/badge/status-active-brightgreen.svg" alt="Project Status">
 </p>
 
-A vectorized N-body gravitational simulator implemented in MATLAB. This project models the evolution of a system of celestial bodies under mutual gravitational attraction using various numerical integration schemes. It is designed with scientific accuracy and performance in mind.
+A vectorised N-body gravitational simulator made in MATLAB. This project models the evolution of a system of celestial bodies under mutual gravitational attraction using numerical integration schemes.
 
 ---
 
@@ -142,7 +142,8 @@ function config = binary_star()
                  'Velocity', [0, -15e3]);
 
     config.bodies = {star1, star2};
-end
+```
+---
 
 ## License
 
@@ -150,6 +151,6 @@ This project is licensed under the MIT License.
 
 ## Contact
 
-[Your Name] - [your-email@example.com]
+Edmond Sim - edmond.sim1010@gmail.com
 
-Project Link: `https://github.com/[your-username]/[your-repo-name]`
+Project Link: `https://github.com/EdmondSim1010/nbody-simulator`
