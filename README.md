@@ -15,7 +15,7 @@ A vectorised N-body gravitational simulator made in MATLAB. This project models 
 - [Overview](#overview)  
 - [Key Features](#key-features)  
 - [Demonstration](#demonstration)  
-- [Technical Deep Dive](#technical-deep-dive)  
+- [Underlying Physics](#underlying-physics)  
 - [Setup](#setup)   
 - [License](#license)  
 - [Contact](#contact)  
@@ -26,7 +26,7 @@ A vectorised N-body gravitational simulator made in MATLAB. This project models 
 
 The N-body problem is a classical challenge in physics and computational science: predicting the individual motions of a group of celestial objects that interact gravitationally. This simulator provides a framework to solve this problem for any set of initial conditions (masses, positions, velocities).
 
-The primary goal of this project is to leverage MATLAB's powerful matrix manipulation capabilities to create an efficient, vectorized solution that avoids nested loops—achieving significant performance gains.
+The primary goal of this project is to leverage MATLAB's powerful matrix manipulation capabilities to create an efficient, vectorised solution that avoids nested loops, thus achieving significant performance gains.
 
 ---
 
@@ -38,7 +38,7 @@ The primary goal of this project is to leverage MATLAB's powerful matrix manipul
   - **Runge-Kutta 4th Order (RK4)**: A high-accuracy method suited for precision-critical applications.
 
 - **Vectorized Computation**  
-  Fully vectorized gravitational force calculation eliminates nested loops and uses optimized MATLAB matrix operations, achieving \( \mathcal{O}(N^2) \) complexity per timestep.
+  Fully vectorized gravitational force calculation eliminates nested loops and uses optimized MATLAB matrix operations, achieving O(N^2) complexity per timestep.
 
 - **Object-Oriented Design**  
   Implemented using MATLAB classes (`NBodySystem`, `Body`) for modularity, extensibility, and readability.
@@ -63,27 +63,23 @@ The image above shows a stable solar-system-like configuration simulated with th
 
 ---
 
-## Technical Deep Dive
+## Underlying Physics
 
 ### Main Equations
 
 This simulation uses Newton’s Law of Universal Gravitation:
 
-\[
-\vec{F}_{ij} = G \frac{m_i m_j}{|\vec{r}_{ij}|^3} \vec{r}_{ij}, \quad \vec{r}_{ij} = \vec{r}_j - \vec{r}_i
-\]
+<img width="508" alt="Screenshot 2025-07-04 at 8 33 32 am" src="https://github.com/user-attachments/assets/68d2157a-ef68-4cac-8bab-14fd08d0d609" />
+
 
 The total force on body \( i \) is:
 
-\[
-\vec{F}_i = \sum_{j \neq i} \vec{F}_{ij}
-\]
+<img width="235" alt="Screenshot 2025-07-04 at 8 33 45 am" src="https://github.com/user-attachments/assets/2a0f21fe-df0b-4a06-bf63-67062432fa16" />
+
 
 And acceleration is computed via:
 
-\[
-\vec{a}_i = \frac{\vec{F}_i}{m_i}
-\]
+<img width="201" alt="Screenshot 2025-07-04 at 8 33 58 am" src="https://github.com/user-attachments/assets/5b5d1e57-0245-4e66-92ea-fb2af6fe2e5c" />
 
 ---
 
@@ -93,10 +89,8 @@ And acceleration is computed via:
 
 This symplectic method conserves energy well over time. The update steps are:
 
-1. \( \mathbf{v}(t + \frac{\Delta t}{2}) = \mathbf{v}(t) + \mathbf{a}(t) \cdot \frac{\Delta t}{2} \)  
-2. \( \mathbf{r}(t + \Delta t) = \mathbf{r}(t) + \mathbf{v}(t + \frac{\Delta t}{2}) \cdot \Delta t \)  
-3. \( \mathbf{a}(t + \Delta t) = \frac{\mathbf{F}(\mathbf{r}(t + \Delta t))}{m} \)  
-4. \( \mathbf{v}(t + \Delta t) = \mathbf{v}(t + \frac{\Delta t}{2}) + \mathbf{a}(t + \Delta t) \cdot \frac{\Delta t}{2} \)
+<img width="503" alt="Screenshot 2025-07-04 at 8 35 59 am" src="https://github.com/user-attachments/assets/899b7720-18f4-485b-a2cd-b32f918373cf" />
+
 
 #### Runge-Kutta 4th Order (RK4)
 
